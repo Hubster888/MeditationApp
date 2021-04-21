@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     
     //MARK: Variable declerations
     // Related data variables
-    @ObservedObject var currentUser : CurrentUserViewModel = CurrentUserViewModel()
-    @ObservedObject var settings : SettingsViewModel = SettingsViewModel()
-    @ObservedObject var musciViewModel : MusicViewModel = MusicViewModel()
-    @ObservedObject var homeViewModel : HomeViewModel = HomeViewModel()
+    @EnvironmentObject var currentUser : CurrentUserViewModel
+    @EnvironmentObject var settings : SettingsViewModel
+    @EnvironmentObject var musciViewModel : MusicViewModel
+    @EnvironmentObject var homeViewModel : HomeViewModel
     
     // Navigation variables
     @State var settingsIsOpen : Bool = false
@@ -42,7 +43,7 @@ struct ContentView: View {
                     .environmentObject(self.homeViewModel)
                     .ignoresSafeArea(.all)
                     .padding(.bottom, height * 0.02)
-                    .padding(.top, 20)
+                    .padding(.top, 50)
                 //Quote
                 Text("Quote by \(quote.author)")
                     .font(.title3)
@@ -57,13 +58,11 @@ struct ContentView: View {
                     .foregroundColor(Color(ColorConfig().getdarkTextColor()))
                     .frame(width: width * 0.75)
                     .multilineTextAlignment(.center)
-                    //.padding(.bottom, height * 0.015)
                 //Image and button
                 CenterView()
                     .environmentObject(self.musciViewModel)
                     .environmentObject(self.currentUser)
                     .padding(.bottom, centerPaddingBottom)
-                    //.offset(y: -height * 0.09)
                 Spacer()
             }
             
@@ -110,6 +109,10 @@ struct ContentView: View {
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
         )
+        /*.onAppear(){
+            Auth.auth().addStateDidChangeListener { (auth, user) in
+              // Make the changes when the user is logged in or out
+            }
+        }*/
     }
 }
-

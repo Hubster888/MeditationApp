@@ -24,6 +24,7 @@ struct StatsTableView: View {
     let shadowDimensions : CGFloat = 5
     let width: CGFloat = UIScreen.main.bounds.width
     let height: CGFloat = UIScreen.main.bounds.height
+    @State var streakMultiplier = 1
     
     var body: some View {
         ZStack{
@@ -59,7 +60,7 @@ struct StatsTableView: View {
                     VStack{
                         Text("STREAK")
                             .font(.title3)
-                        Text("\(currentUser.currentUser.currentStreak) Days - 2X")
+                        Text("\(currentUser.currentUser.currentStreak) Days - \(streakMultiplier)X")
                             .font(.title2)
                             .bold()
                     }
@@ -79,6 +80,19 @@ struct StatsTableView: View {
             }
         }
         .frame(width: boxWidth, height: columnHeight, alignment: .center)
+        .onAppear(){
+            if(2 < currentUser.currentUser.currentStreak && currentUser.currentUser.currentStreak < 5){
+                streakMultiplier = 1
+            }else if(4 < currentUser.currentUser.currentStreak && currentUser.currentUser.currentStreak < 15){
+                streakMultiplier = 2
+            }else if(14 < currentUser.currentUser.currentStreak && currentUser.currentUser.currentStreak < 30){
+                streakMultiplier = 3
+            }else if(29 < currentUser.currentUser.currentStreak && currentUser.currentUser.currentStreak < 100){
+                streakMultiplier = 4
+            }else if(currentUser.currentUser.currentStreak >= 100){
+                streakMultiplier = 5
+            }
+        }
     }
 }
 

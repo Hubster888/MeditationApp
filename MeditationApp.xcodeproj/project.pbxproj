@@ -9,8 +9,15 @@
 /* Begin PBXBuildFile section */
 		2C3B62FA2624545400D16304 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B62F92624545400D16304 /* MeditationViewModel.swift */; };
 		2C4980192610C820002359EA /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4980182610C820002359EA /* AnimatedImageView.swift */; };
+		2C49928D2630761E00E96E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C49928C2630761E00E96E90 /* AppDelegate.swift */; };
+		2C49929226307EE900E96E90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C49929126307EE900E96E90 /* GoogleService-Info.plist */; };
 		2C68757A2615CB06001F934D /* ScrollingHStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6875792615CB06001F934D /* ScrollingHStackModifier.swift */; };
 		2C68757F2615D888001F934D /* ListElmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68757E2615D888001F934D /* ListElmView.swift */; };
+		2C693695262F203A00EB184D /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693694262F203A00EB184D /* OnboardView.swift */; };
+		2C6936AB262F26D100EB184D /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6936AA262F26D100EB184D /* OnboardingDataModel.swift */; };
+		2C6936B0262F26F000EB184D /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6936AF262F26F000EB184D /* OnboardingStepView.swift */; };
+		2C6936B5262F271700EB184D /* OnboardingViewPure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6936B4262F271700EB184D /* OnboardingViewPure.swift */; };
+		2C6936BA262F2B4600EB184D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6936B9262F2B4600EB184D /* LogInView.swift */; };
 		2C7A8BE7261F0C4E009AA0EF /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A8BE6261F0C4E009AA0EF /* CenterView.swift */; };
 		2C7A8BF7261F0DE3009AA0EF /* MusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A8BF6261F0DE3009AA0EF /* MusicListView.swift */; };
 		2C7A8C04261F10DE009AA0EF /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A8C03261F10DE009AA0EF /* Music.swift */; };
@@ -70,8 +77,15 @@
 		285AEE3D9D8BBABB29DB8878 /* Pods-MeditationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationApp.release.xcconfig"; path = "Target Support Files/Pods-MeditationApp/Pods-MeditationApp.release.xcconfig"; sourceTree = "<group>"; };
 		2C3B62F92624545400D16304 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		2C4980182610C820002359EA /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
+		2C49928C2630761E00E96E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C49929126307EE900E96E90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C6875792615CB06001F934D /* ScrollingHStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingHStackModifier.swift; sourceTree = "<group>"; };
 		2C68757E2615D888001F934D /* ListElmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElmView.swift; sourceTree = "<group>"; };
+		2C693694262F203A00EB184D /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		2C6936AA262F26D100EB184D /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
+		2C6936AF262F26F000EB184D /* OnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepView.swift; sourceTree = "<group>"; };
+		2C6936B4262F271700EB184D /* OnboardingViewPure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPure.swift; sourceTree = "<group>"; };
+		2C6936B9262F2B4600EB184D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		2C7A8BE6261F0C4E009AA0EF /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
 		2C7A8BF6261F0DE3009AA0EF /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
 		2C7A8C03261F10DE009AA0EF /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -151,6 +165,8 @@
 				2C4980182610C820002359EA /* AnimatedImageView.swift */,
 				2C6875792615CB06001F934D /* ScrollingHStackModifier.swift */,
 				2C68757E2615D888001F934D /* ListElmView.swift */,
+				2C6936AF262F26F000EB184D /* OnboardingStepView.swift */,
+				2C6936B4262F271700EB184D /* OnboardingViewPure.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -167,6 +183,8 @@
 				2CB362A6261206FC00F36F32 /* StatsTableView.swift */,
 				2CB362A826120C9C00F36F32 /* AchivementsTableView.swift */,
 				2C9B0F4226133C7E009AA20E /* SettingsView.swift */,
+				2C693694262F203A00EB184D /* OnboardView.swift */,
+				2C6936B9262F2B4600EB184D /* LogInView.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -177,6 +195,7 @@
 				2CC41CEE262882A70035E549 /* ViewModel */,
 				2CC41CED262882980035E549 /* Models */,
 				2CE0BF06260B16C40061995F /* MeditationAppApp.swift */,
+				2C49928C2630761E00E96E90 /* AppDelegate.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -219,6 +238,7 @@
 				2CC41CF2262883CE0035E549 /* Settings.swift */,
 				2CC41CFC2628850E0035E549 /* CurrentUser.swift */,
 				2CC41D092628B0E90035E549 /* Quote.swift */,
+				2C6936AA262F26D100EB184D /* OnboardingDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +259,7 @@
 		2CE0BEFA260B16C40061995F = {
 			isa = PBXGroup;
 			children = (
+				2C49929126307EE900E96E90 /* GoogleService-Info.plist */,
 				2CED8C5C2626F74D006CA0DC /* music1.mp3 */,
 				2CED8C572626EF7B006CA0DC /* meditationGIF.gif */,
 				2CE0BF05260B16C40061995F /* MeditationApp */,
@@ -429,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C49929226307EE900E96E90 /* GoogleService-Info.plist in Resources */,
 				2CED8C5D2626F74D006CA0DC /* music1.mp3 in Resources */,
 				2CED8C582626EF7C006CA0DC /* meditationGIF.gif in Resources */,
 				2CE0BF0E260B16C50061995F /* Preview Assets.xcassets in Resources */,
@@ -573,10 +595,15 @@
 				2C3B62FA2624545400D16304 /* MeditationViewModel.swift in Sources */,
 				2CA9F33E261DB66200236377 /* MeditationView.swift in Sources */,
 				2CC41CF82628843F0035E549 /* SettingsViewModel.swift in Sources */,
+				2C6936B0262F26F000EB184D /* OnboardingStepView.swift in Sources */,
 				2CC41D0A2628B0E90035E549 /* Quote.swift in Sources */,
 				2C8E166026259F2A007BC118 /* TimePickerView.swift in Sources */,
 				2CC41CFD2628850E0035E549 /* CurrentUser.swift in Sources */,
+				2C693695262F203A00EB184D /* OnboardView.swift in Sources */,
+				2C49928D2630761E00E96E90 /* AppDelegate.swift in Sources */,
+				2C6936BA262F2B4600EB184D /* LogInView.swift in Sources */,
 				2CE0BF07260B16C40061995F /* MeditationAppApp.swift in Sources */,
+				2C6936B5262F271700EB184D /* OnboardingViewPure.swift in Sources */,
 				2C964BDC2623076A0012A4EB /* TimerView.swift in Sources */,
 				2C68757A2615CB06001F934D /* ScrollingHStackModifier.swift in Sources */,
 				2C7A8C0E261F13C8009AA0EF /* MenuButtonView.swift in Sources */,
@@ -587,6 +614,7 @@
 				2C9B0F4126133BF5009AA20E /* ScaleAnimationButtonEffect.swift in Sources */,
 				2C7A8C09261F10F3009AA0EF /* MusicViewModel.swift in Sources */,
 				2CB362A926120C9C00F36F32 /* AchivementsTableView.swift in Sources */,
+				2C6936AB262F26D100EB184D /* OnboardingDataModel.swift in Sources */,
 				2C7A8BF7261F0DE3009AA0EF /* MusicListView.swift in Sources */,
 				2C68757F2615D888001F934D /* ListElmView.swift in Sources */,
 			);

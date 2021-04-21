@@ -33,7 +33,7 @@ struct MeditationView: View {
                 VStack{
                     Button(action: {
                         if let path = Bundle.main.path(forResource: "music1", ofType: ".mp3") { // Change "music1" to musicName when songs downloaded
-
+                            UIApplication.shared.isIdleTimerDisabled.toggle()
                             self.audioPlayer = AVAudioPlayer()
 
                             withAnimation{
@@ -85,7 +85,7 @@ struct MeditationView: View {
                         isMoving = false // While developing leave this on FALSE
                     }
             )
-            EndView()
+            EndView(numOfPoints: secondsToHoursMinutesSeconds(seconds: meditationViewModel.timeSelected).1)
                 .environmentObject(self.currentUser)
                 .scaleEffect(meditationViewModel.isFinished ? 1 : 0)
                 .allowsHitTesting(meditationViewModel.isFinished ? true : false)

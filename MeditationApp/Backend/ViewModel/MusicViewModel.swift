@@ -15,5 +15,5 @@ class MusicViewModel : ObservableObject {
         Music(name: "music4"),
         Music(name: "music5")
     ]
-    @Published var chosenMusic : Music = Music(name: "music1")
+    @Published var chosenMusic : Music = Music(name: "music2")
 }

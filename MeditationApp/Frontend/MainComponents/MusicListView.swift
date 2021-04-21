@@ -61,7 +61,6 @@ struct MusicListView: View {
                 }
                 .modifier(ScrollingHStackModifier(items: musicViewModel.musicList.count, itemWidth: listElmWidth, itemSpacing: elmPadding))
                 .padding(.top, height * 0.1)
-                //.offset(y: listOffset)
                 Spacer()
             }
             Rectangle()
