@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2E2F402632045200C7BA91 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E2F3F2632045200C7BA91 /* SignUpView.swift */; };
 		2C3B62FA2624545400D16304 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B62F92624545400D16304 /* MeditationViewModel.swift */; };
 		2C4980192610C820002359EA /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4980182610C820002359EA /* AnimatedImageView.swift */; };
 		2C49928D2630761E00E96E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C49928C2630761E00E96E90 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		15998531A3F972C5E420B095 /* Pods-MeditationAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationAppTests.release.xcconfig"; path = "Target Support Files/Pods-MeditationAppTests/Pods-MeditationAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		1AFF0D1FCF6DB5EE002560B0 /* Pods-MeditationApp-MeditationAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationApp-MeditationAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		285AEE3D9D8BBABB29DB8878 /* Pods-MeditationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationApp.release.xcconfig"; path = "Target Support Files/Pods-MeditationApp/Pods-MeditationApp.release.xcconfig"; sourceTree = "<group>"; };
+		2C2E2F3F2632045200C7BA91 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2C3B62F92624545400D16304 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		2C4980182610C820002359EA /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
 		2C49928C2630761E00E96E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C2E2F3E2632042E00C7BA91 /* AccountViews */ = {
+			isa = PBXGroup;
+			children = (
+				2C693694262F203A00EB184D /* OnboardView.swift */,
+				2C6936B9262F2B4600EB184D /* LogInView.swift */,
+				2C2E2F3F2632045200C7BA91 /* SignUpView.swift */,
+			);
+			path = AccountViews;
+			sourceTree = "<group>";
+		};
 		2C4980152610C7E3002359EA /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,7 @@
 		2C4980162610C7ED002359EA /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				2C2E2F3E2632042E00C7BA91 /* AccountViews */,
 				2C964BDA2623074F0012A4EB /* Meditation */,
 				2C7A8BE5261F0C37009AA0EF /* MainComponents */,
 				2C9B0F3F26133BE1009AA20E /* Styles */,
@@ -183,8 +196,6 @@
 				2CB362A6261206FC00F36F32 /* StatsTableView.swift */,
 				2CB362A826120C9C00F36F32 /* AchivementsTableView.swift */,
 				2C9B0F4226133C7E009AA20E /* SettingsView.swift */,
-				2C693694262F203A00EB184D /* OnboardView.swift */,
-				2C6936B9262F2B4600EB184D /* LogInView.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -598,6 +609,7 @@
 				2C6936B0262F26F000EB184D /* OnboardingStepView.swift in Sources */,
 				2CC41D0A2628B0E90035E549 /* Quote.swift in Sources */,
 				2C8E166026259F2A007BC118 /* TimePickerView.swift in Sources */,
+				2C2E2F402632045200C7BA91 /* SignUpView.swift in Sources */,
 				2CC41CFD2628850E0035E549 /* CurrentUser.swift in Sources */,
 				2C693695262F203A00EB184D /* OnboardView.swift in Sources */,
 				2C49928D2630761E00E96E90 /* AppDelegate.swift in Sources */,

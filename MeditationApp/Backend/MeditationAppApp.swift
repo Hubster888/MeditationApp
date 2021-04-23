@@ -27,7 +27,11 @@ struct MeditationAppApp: App {
                     .environmentObject(self.musciViewModel)
                     .environmentObject(self.homeViewModel)
             }else{
-                OnboardView().environmentObject(self.currentUser)
+                OnboardView()
+                    .environmentObject(self.currentUser)
+                    .environmentObject(self.settings)
+                    .environmentObject(self.musciViewModel)
+                    .environmentObject(self.homeViewModel)
             }
         }
     }

@@ -109,10 +109,10 @@ struct ContentView: View {
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
         )
-        /*.onAppear(){
+        .onAppear(){
             Auth.auth().addStateDidChangeListener { (auth, user) in
               // Make the changes when the user is logged in or out
             }
-        }*/
+        }
     }
 }

@@ -17,11 +17,17 @@ struct OnboardView: View {
     @State var showingLogIn = false
     @State private var goToMainView : Bool = false
     @State private var isShowingDetailView = false
+    @State private var onboardFinished = false
+    @EnvironmentObject var currentUser : CurrentUserViewModel
+    @EnvironmentObject var settings : SettingsViewModel
+    @EnvironmentObject var musciViewModel : MusicViewModel
+    @EnvironmentObject var homeViewModel : HomeViewModel
         
     var body: some View {
         ZStack{
             Color(ColorConfig().getDefaultMainColor()).ignoresSafeArea(.all)
             OnboardingViewPure(data: onBoardData, doneFunction: {
+                self.onboardFinished = true
                 if(Auth.auth().currentUser != nil){
                     UserDefaults.standard.set(true, forKey: "launchedBefore")
                     self.isShowingDetailView = true
@@ -31,9 +37,22 @@ struct OnboardView: View {
                 }
             }, backgroundColor: Color(ColorConfig().getDefaultMainColor()))
             .sheet(isPresented: $showingLogIn) {
-                LogInView()
+                LogInView().environmentObject(self.currentUser)
             }
-            .navigate(to: ContentView(), when: $isShowingDetailView)
+            .navigate(to: ContentView()
+                        .environmentObject(self.currentUser)
+                        .environmentObject(self.settings)
+                        .environmentObject(self.musciViewModel)
+                        .environmentObject(self.homeViewModel)
+                      , when: $isShowingDetailView)
+            .onAppear(){
+                Auth.auth().addStateDidChangeListener { (auth, user) in
+                  // Make the changes when the user is logged in or out
+                    if Auth.auth().currentUser != nil && self.onboardFinished{
+                        self.isShowingDetailView = true
+                    }
+                }
+            }
         }
     }
 }

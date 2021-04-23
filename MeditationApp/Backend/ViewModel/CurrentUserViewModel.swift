@@ -21,6 +21,7 @@ class CurrentUserViewModel : ObservableObject{
     @Published var passwordAgain = ""
     // Output to login screen
     @Published var isValid = false
+    @Published var signupIsValid = false
     private var cancellableSet = Set<AnyCancellable>()
     
     init(){
@@ -33,8 +34,19 @@ class CurrentUserViewModel : ObservableObject{
               .receive(on: RunLoop.main)
               .assign(to: \.isValid, on: self)
               .store(in: &cancellableSet)
+        
+        signupValid
+            .receive(on: RunLoop.main)
+            .assign(to: \.signupIsValid, on: self)
+            .store(in: &cancellableSet)
     }
-    
+    private var signupValid: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest(isEmailValid, passwordIsEqual)
+            .map{ emailValid, passAreEqual in
+                return emailValid && passAreEqual
+            }
+            .eraseToAnyPublisher()
+    }
     private var isDetailsValid: AnyPublisher<Bool, Never> {
       Publishers.CombineLatest(isEmailValid, isPasswordEmptyPublisher)
         .map { emailIsValid, passwordIsEmpty in
@@ -63,10 +75,27 @@ class CurrentUserViewModel : ObservableObject{
           .eraseToAnyPublisher()
       }
     
+    private var passwordIsEqual: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest($password, $passwordAgain)
+              .debounce(for: 0.2, scheduler: RunLoop.main)
+              .map { password, passwordAgain in
+                let passEmpty = password == ""
+                let passAgainEmpty = passwordAgain == ""
+                return password == passwordAgain && !passEmpty && !passAgainEmpty
+              }
+              .eraseToAnyPublisher()
+    }
+    
     func login(){
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard self != nil else { return }
           // Do stuff after sign in?
+        }
+    }
+    
+    func signUp(){
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+          // Do stuff after sign up?
         }
     }
 
@@ -121,6 +150,12 @@ class CurrentUserViewModel : ObservableObject{
         currentUser.currentStreak = 0
         currentUser.currentZenPoints =  0
         currentUser.totalSessions = 0
+        do{
+            try Auth.auth().signOut()
+        }catch{
+            print("Sign out failed")
+        }
+        
     }
 }
 
