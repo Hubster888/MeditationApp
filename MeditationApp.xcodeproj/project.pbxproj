@@ -11,7 +11,6 @@
 		2C3B62FA2624545400D16304 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B62F92624545400D16304 /* MeditationViewModel.swift */; };
 		2C4980192610C820002359EA /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4980182610C820002359EA /* AnimatedImageView.swift */; };
 		2C49928D2630761E00E96E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C49928C2630761E00E96E90 /* AppDelegate.swift */; };
-		2C49929226307EE900E96E90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C49929126307EE900E96E90 /* GoogleService-Info.plist */; };
 		2C68757A2615CB06001F934D /* ScrollingHStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6875792615CB06001F934D /* ScrollingHStackModifier.swift */; };
 		2C68757F2615D888001F934D /* ListElmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68757E2615D888001F934D /* ListElmView.swift */; };
 		2C693695262F203A00EB184D /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693694262F203A00EB184D /* OnboardView.swift */; };
@@ -50,6 +49,9 @@
 		2CED8C532626ED57006CA0DC /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED8C522626ED57006CA0DC /* EndView.swift */; };
 		2CED8C582626EF7C006CA0DC /* meditationGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CED8C572626EF7B006CA0DC /* meditationGIF.gif */; };
 		2CED8C5D2626F74D006CA0DC /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CED8C5C2626F74D006CA0DC /* music1.mp3 */; };
+		2CF0F8032635C19B000BB32B /* Achivement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F8022635C19B000BB32B /* Achivement.swift */; };
+		2CF0F8082635C203000BB32B /* AchivementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F8072635C203000BB32B /* AchivementViewModel.swift */; };
+		2CFBD6DC2635ECEB005C820A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CFBD6DB2635ECEB005C820A /* GoogleService-Info.plist */; };
 		8C4D7C1271F15C645E5DBA77 /* Pods_MeditationApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F328B0E24E6E53845E745ECB /* Pods_MeditationApp.framework */; };
 		90CD960A592F03676F86E050 /* Pods_MeditationAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB2FFE0DBCB2E5407AEB36E /* Pods_MeditationAppTests.framework */; };
 		BF69276113EDDAA017EE8063 /* Pods_MeditationApp_MeditationAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C07567A0962053F21B6D226 /* Pods_MeditationApp_MeditationAppUITests.framework */; };
@@ -80,7 +82,6 @@
 		2C3B62F92624545400D16304 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		2C4980182610C820002359EA /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
 		2C49928C2630761E00E96E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C49929126307EE900E96E90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C6875792615CB06001F934D /* ScrollingHStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingHStackModifier.swift; sourceTree = "<group>"; };
 		2C68757E2615D888001F934D /* ListElmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElmView.swift; sourceTree = "<group>"; };
 		2C693694262F203A00EB184D /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
@@ -125,6 +126,9 @@
 		2CED8C522626ED57006CA0DC /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
 		2CED8C572626EF7B006CA0DC /* meditationGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = meditationGIF.gif; path = Images/meditationGIF.gif; sourceTree = "<group>"; };
 		2CED8C5C2626F74D006CA0DC /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music1.mp3; path = Music/music1.mp3; sourceTree = "<group>"; };
+		2CF0F8022635C19B000BB32B /* Achivement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achivement.swift; sourceTree = "<group>"; };
+		2CF0F8072635C203000BB32B /* AchivementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementViewModel.swift; sourceTree = "<group>"; };
+		2CFBD6DB2635ECEB005C820A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43540F9D2C16949C9975A8B4 /* Pods-MeditationApp-MeditationAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationApp-MeditationAppUITests.release.xcconfig"; path = "Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5A7DC0E90D5100FF018BECA0 /* Pods-MeditationAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MeditationAppTests/Pods-MeditationAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C07567A0962053F21B6D226 /* Pods_MeditationApp_MeditationAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeditationApp_MeditationAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +254,7 @@
 				2CC41CFC2628850E0035E549 /* CurrentUser.swift */,
 				2CC41D092628B0E90035E549 /* Quote.swift */,
 				2C6936AA262F26D100EB184D /* OnboardingDataModel.swift */,
+				2CF0F8022635C19B000BB32B /* Achivement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				2CC41CF72628843F0035E549 /* SettingsViewModel.swift */,
 				2CC41D01262885500035E549 /* CurrentUserViewModel.swift */,
 				2CC41D0E2628B1190035E549 /* QuoteViewModel.swift */,
+				2CF0F8072635C203000BB32B /* AchivementViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,8 +276,8 @@
 		2CE0BEFA260B16C40061995F = {
 			isa = PBXGroup;
 			children = (
-				2C49929126307EE900E96E90 /* GoogleService-Info.plist */,
 				2CED8C5C2626F74D006CA0DC /* music1.mp3 */,
+				2CFBD6DB2635ECEB005C820A /* GoogleService-Info.plist */,
 				2CED8C572626EF7B006CA0DC /* meditationGIF.gif */,
 				2CE0BF05260B16C40061995F /* MeditationApp */,
 				2CE0BF17260B16C60061995F /* MeditationAppTests */,
@@ -364,7 +370,7 @@
 				2CE0BEFF260B16C40061995F /* Sources */,
 				2CE0BF00260B16C40061995F /* Frameworks */,
 				2CE0BF01260B16C40061995F /* Resources */,
-				7D9E6FA1CBBB1A24658A56AE /* [CP] Embed Pods Frameworks */,
+				43E4A782BA2DD62E8B004898 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -402,7 +408,7 @@
 				2CE0BF1B260B16C60061995F /* Sources */,
 				2CE0BF1C260B16C60061995F /* Frameworks */,
 				2CE0BF1D260B16C60061995F /* Resources */,
-				1B1A4222EFC0F45700512080 /* [CP] Embed Pods Frameworks */,
+				62B6ED732A97DB9546BD4786 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -461,9 +467,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C49929226307EE900E96E90 /* GoogleService-Info.plist in Resources */,
 				2CED8C5D2626F74D006CA0DC /* music1.mp3 in Resources */,
 				2CED8C582626EF7C006CA0DC /* meditationGIF.gif in Resources */,
+				2CFBD6DC2635ECEB005C820A /* GoogleService-Info.plist in Resources */,
 				2CE0BF0E260B16C50061995F /* Preview Assets.xcassets in Resources */,
 				2CE0BF0B260B16C50061995F /* Assets.xcassets in Resources */,
 			);
@@ -486,23 +492,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B1A4222EFC0F45700512080 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		40051146AC90C54917E128B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,6 +514,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		43E4A782BA2DD62E8B004898 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp/Pods-MeditationApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp/Pods-MeditationApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeditationApp/Pods-MeditationApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62B6ED732A97DB9546BD4786 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		67A3FC25D5D26F0686E1C8CC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,23 +568,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D9E6FA1CBBB1A24658A56AE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp/Pods-MeditationApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MeditationApp/Pods-MeditationApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeditationApp/Pods-MeditationApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A75934909F9BC3856693A982 /* [CP] Check Pods Manifest.lock */ = {
@@ -607,6 +613,7 @@
 				2CA9F33E261DB66200236377 /* MeditationView.swift in Sources */,
 				2CC41CF82628843F0035E549 /* SettingsViewModel.swift in Sources */,
 				2C6936B0262F26F000EB184D /* OnboardingStepView.swift in Sources */,
+				2CF0F8082635C203000BB32B /* AchivementViewModel.swift in Sources */,
 				2CC41D0A2628B0E90035E549 /* Quote.swift in Sources */,
 				2C8E166026259F2A007BC118 /* TimePickerView.swift in Sources */,
 				2C2E2F402632045200C7BA91 /* SignUpView.swift in Sources */,
@@ -617,6 +624,7 @@
 				2CE0BF07260B16C40061995F /* MeditationAppApp.swift in Sources */,
 				2C6936B5262F271700EB184D /* OnboardingViewPure.swift in Sources */,
 				2C964BDC2623076A0012A4EB /* TimerView.swift in Sources */,
+				2CF0F8032635C19B000BB32B /* Achivement.swift in Sources */,
 				2C68757A2615CB06001F934D /* ScrollingHStackModifier.swift in Sources */,
 				2C7A8C0E261F13C8009AA0EF /* MenuButtonView.swift in Sources */,
 				2C4980192610C820002359EA /* AnimatedImageView.swift in Sources */,

@@ -12,6 +12,7 @@ struct ContentView: View {
     
     //MARK: Variable declerations
     // Related data variables
+    @ObservedObject var achivementViewModel : AchivementViewModel = AchivementViewModel()
     @EnvironmentObject var currentUser : CurrentUserViewModel
     @EnvironmentObject var settings : SettingsViewModel
     @EnvironmentObject var musciViewModel : MusicViewModel
@@ -41,6 +42,7 @@ struct ContentView: View {
                 MusicListView()
                     .environmentObject(self.musciViewModel)
                     .environmentObject(self.homeViewModel)
+                    .environmentObject(self.currentUser)
                     .ignoresSafeArea(.all)
                     .padding(.bottom, height * 0.02)
                     .padding(.top, 50)
@@ -99,6 +101,7 @@ struct ContentView: View {
                     .padding(.bottom, height * 0.25)
                     .scaleEffect(homeViewModel.menuIsActive ? 1 : 0)
                     .allowsHitTesting(homeViewModel.menuIsActive ? true : false)
+                    .environmentObject(self.achivementViewModel)
                 Spacer()
             }.scaleEffect(height < 750 ? 0.9 : 1)
         }.background(
@@ -112,6 +115,7 @@ struct ContentView: View {
         .onAppear(){
             Auth.auth().addStateDidChangeListener { (auth, user) in
               // Make the changes when the user is logged in or out
+                achivementViewModel.updateAchivements()
             }
         }
     }

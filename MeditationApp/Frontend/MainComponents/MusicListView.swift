@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MusicListView: View {
     
@@ -13,6 +14,7 @@ struct MusicListView: View {
     // Data varialbes
     @EnvironmentObject var musicViewModel : MusicViewModel
     @EnvironmentObject var homeViewModel : HomeViewModel
+    @EnvironmentObject var currentUser : CurrentUserViewModel
     
     // View variables
     var listElmWidth : CGFloat {
@@ -52,10 +54,16 @@ struct MusicListView: View {
                 HStack(alignment: .center, spacing: elmPadding) {
                     ForEach(musicViewModel.musicList, id: \.self){ elm in
                         ListElmView(elm: elm, isSelected: elm.name == musicViewModel.chosenMusic.name)
+                            .environmentObject(self.currentUser)
                             .onTapGesture {
-                                withAnimation{
-                                    musicViewModel.chosenMusic.name = elm.name
+                                if(elm.minZenPoints > currentUser.currentUser.currentZenPoints || (Auth.auth().currentUser == nil && elm.minZenPoints > 0)){
+                                    print("Not enough points")
+                                }else{
+                                    withAnimation{
+                                        musicViewModel.chosenMusic.name = elm.name
+                                    }
                                 }
+                                
                             }
                     }
                 }

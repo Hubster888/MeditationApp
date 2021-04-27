@@ -9,4 +9,5 @@ import Foundation
 
 struct Music : Hashable {
     var name : String
+    var minZenPoints : Int
 }

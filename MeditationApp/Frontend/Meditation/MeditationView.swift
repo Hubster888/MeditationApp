@@ -82,7 +82,7 @@ struct MeditationView: View {
                     .offset(x: isMoving ? -imageAnimationOffset : imageAnimationOffset)
                     .animation(Animation.linear(duration: 18).repeatForever())
                     .onAppear(){
-                        isMoving = false // While developing leave this on FALSE
+                        isMoving = true // While developing leave this on FALSE
                     }
             )
             EndView(numOfPoints: secondsToHoursMinutesSeconds(seconds: meditationViewModel.timeSelected).1)

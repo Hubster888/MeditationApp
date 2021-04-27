@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AchivementsTableView: View {
     
+    @EnvironmentObject var achivementViewModel : AchivementViewModel
+    
     var boxWidth : CGFloat {
         return width * 0.8
     }
@@ -41,20 +43,23 @@ struct AchivementsTableView: View {
                 .shadow(radius: shadowRadius, x: shadowDimensions, y: shadowDimensions)
             VStack{
                 HStack{
-                    Image("achivement1")
+                    Image(achivementViewModel.achivementList[0].image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
                         .padding(.leading, achivementPadding)
                         .padding(.trailing, achivementPadding)
                         .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image("achivement2")
+                        .onTapGesture {
+                            print(achivementViewModel.achivementList[0].name)
+                        }
+                    Image(achivementViewModel.achivementList[1].image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
                         .padding(.trailing, achivementPadding)
                         .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image("achivement3")
+                    Image(achivementViewModel.achivementList[2].image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
@@ -63,25 +68,28 @@ struct AchivementsTableView: View {
                 }
                 .padding(.bottom, achivementLinePadding)
                 HStack{
-                    Image("achivement3")
+                    Image(achivementViewModel.achivementList[3].image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
                         .padding(.leading, achivementPadding)
                         .padding(.trailing, achivementPadding)
                         .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image("achivement1")
+                    Image(achivementViewModel.achivementList[4].image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
                         .padding(.trailing, achivementPadding)
                         .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image("achivement2")
+                    Image(achivementViewModel.achivementList[5].image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
                         .padding(.trailing, achivementPadding)
                         .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
+                        .onTapGesture {
+                            print(achivementViewModel.achivementList[5].name)
+                        }
                 }
             }
         }

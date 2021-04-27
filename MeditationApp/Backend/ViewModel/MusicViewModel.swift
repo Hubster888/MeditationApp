@@ -9,11 +9,11 @@ import Foundation
 
 class MusicViewModel : ObservableObject {
     @Published var musicList : [Music] = [
-        Music(name: "music1"),
-        Music(name: "music2"),
-        Music(name: "music3"),
-        Music(name: "music4"),
-        Music(name: "music5")
+        Music(name: "music1", minZenPoints: 0),
+        Music(name: "music2", minZenPoints: 0),
+        Music(name: "music3", minZenPoints: 1),
+        Music(name: "music4", minZenPoints: 2),
+        Music(name: "music5", minZenPoints: 3)
     ]
-    @Published var chosenMusic : Music = Music(name: "music2")
+    @Published var chosenMusic : Music = Music(name: "music2", minZenPoints: 0)
 }

@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct MeditationAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @ObservedObject var currentUser : CurrentUserViewModel = CurrentUserViewModel()
     @ObservedObject var settings : SettingsViewModel = SettingsViewModel()
     @ObservedObject var musciViewModel : MusicViewModel = MusicViewModel()
     @ObservedObject var homeViewModel : HomeViewModel = HomeViewModel()
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     
     var body: some Scene {

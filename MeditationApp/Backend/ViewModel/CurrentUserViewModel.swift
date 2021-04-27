@@ -98,6 +98,15 @@ class CurrentUserViewModel : ObservableObject{
           // Do stuff after sign up?
         }
     }
+    
+    func signOut(){
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("Sign out failed!!!")
+        }
+    }
 
     //MARK: User stats
     func updateStreak(){
