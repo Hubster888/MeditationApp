@@ -15,6 +15,9 @@ struct MusicListView: View {
     @EnvironmentObject var musicViewModel : MusicViewModel
     @EnvironmentObject var homeViewModel : HomeViewModel
     @EnvironmentObject var currentUser : CurrentUserViewModel
+    @State private var showingAlertLogIn = false
+    @State private var showingAlertPoint = false
+    @State private var showingLogIn = false
     
     // View variables
     var listElmWidth : CGFloat {
@@ -30,7 +33,7 @@ struct MusicListView: View {
         return height * 0.11
     }
     var backHeight : CGFloat {
-        return height * 0.3
+        return height * 0.405
     }
     var listOffset : CGFloat {
         return height * 0.04
@@ -57,18 +60,32 @@ struct MusicListView: View {
                             .environmentObject(self.currentUser)
                             .onTapGesture {
                                 if(elm.minZenPoints > currentUser.currentUser.currentZenPoints || (Auth.auth().currentUser == nil && elm.minZenPoints > 0)){
-                                    print("Not enough points")
+                                    if(Auth.auth().currentUser == nil){
+                                        showingAlertLogIn = true
+                                    }
                                 }else{
                                     withAnimation{
                                         musicViewModel.chosenMusic.name = elm.name
                                     }
                                 }
-                                
+                            }
+                            .alert(isPresented: $showingAlertLogIn) {
+                                Alert(
+                                    title: Text("Music Blocked"),
+                                    message: Text("Log In is required to unlock music."),
+                                    primaryButton: .default(Text("Log In")) {
+                                        showingLogIn = true
+                                    },
+                                    secondaryButton: .cancel()
+                                )
+                            }
+                            .sheet(isPresented: $showingLogIn) {
+                                LogInView().environmentObject(self.currentUser)
                             }
                     }
                 }
                 .modifier(ScrollingHStackModifier(items: musicViewModel.musicList.count, itemWidth: listElmWidth, itemSpacing: elmPadding))
-                .padding(.top, height * 0.1)
+                .padding(.top, height * 0.2)
                 Spacer()
             }
             Rectangle()

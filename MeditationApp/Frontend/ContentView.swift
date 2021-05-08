@@ -13,7 +13,7 @@ struct ContentView: View {
     //MARK: Variable declerations
     // Related data variables
     @ObservedObject var achivementViewModel : AchivementViewModel = AchivementViewModel()
-    @EnvironmentObject var currentUser : CurrentUserViewModel
+    @ObservedObject var currentUser : CurrentUserViewModel = CurrentUserViewModel()
     @EnvironmentObject var settings : SettingsViewModel
     @EnvironmentObject var musciViewModel : MusicViewModel
     @EnvironmentObject var homeViewModel : HomeViewModel
@@ -27,7 +27,10 @@ struct ContentView: View {
         return height * 0.025
     }
     var centerPaddingBottom : CGFloat {
-        return height * 0.2
+        return height * 0.35
+    }
+    var quoteFont : CGFloat {
+        return (width * 0.04 > 9) ? width * 0.05 : 9
     }
     let width: CGFloat = UIScreen.main.bounds.width
     let height: CGFloat = UIScreen.main.bounds.height
@@ -44,11 +47,10 @@ struct ContentView: View {
                     .environmentObject(self.homeViewModel)
                     .environmentObject(self.currentUser)
                     .ignoresSafeArea(.all)
-                    .padding(.bottom, height * 0.02)
                     .padding(.top, 50)
                 //Quote
                 Text("Quote by \(quote.author)")
-                    .font(.title3)
+                    .font(.system(size: quoteFont + 2))
                     .foregroundColor(Color(ColorConfig().getdarkTextColor()))
                     .bold()
                     .padding(.bottom, 5)
@@ -56,10 +58,11 @@ struct ContentView: View {
                         quote = QuoteViewModel().pickRandomQuote()
                     }
                 Text(quote.quote)
-                    .font(.title3)
+                    .font(.system(size: quoteFont))
                     .foregroundColor(Color(ColorConfig().getdarkTextColor()))
                     .frame(width: width * 0.75)
                     .multilineTextAlignment(.center)
+                    
                 //Image and button
                 CenterView()
                     .environmentObject(self.musciViewModel)
@@ -102,6 +105,7 @@ struct ContentView: View {
                     .scaleEffect(homeViewModel.menuIsActive ? 1 : 0)
                     .allowsHitTesting(homeViewModel.menuIsActive ? true : false)
                     .environmentObject(self.achivementViewModel)
+                    .environmentObject(self.currentUser)
                 Spacer()
             }.scaleEffect(height < 750 ? 0.9 : 1)
         }.background(
@@ -116,6 +120,7 @@ struct ContentView: View {
             Auth.auth().addStateDidChangeListener { (auth, user) in
               // Make the changes when the user is logged in or out
                 achivementViewModel.updateAchivements()
+                
             }
         }
     }

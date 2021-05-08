@@ -8,17 +8,20 @@
 import Foundation
 import Combine
 import Firebase
+import FirebaseFirestore
 
 class CurrentUserViewModel : ObservableObject{
     @Published var currentUser : CurrentUser
     
     let defaults = UserDefaults.standard
+    let db = Firestore.firestore()
     
     //MARK: Login fields and checks
     // Input to login screen
     @Published var email = ""
     @Published var password = ""
     @Published var passwordAgain = ""
+    
     // Output to login screen
     @Published var isValid = false
     @Published var signupIsValid = false
@@ -96,6 +99,7 @@ class CurrentUserViewModel : ObservableObject{
     func signUp(){
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
           // Do stuff after sign up?
+            self.addUserToFirestore()
         }
     }
     
@@ -108,11 +112,32 @@ class CurrentUserViewModel : ObservableObject{
         }
     }
 
+    func addUserToFirestore(){
+        db.collection("users").document(Auth.auth().currentUser!.uid).setData([
+            "a1": false,
+            "a2": false,
+            "a3": false
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
     //MARK: User stats
     func updateStreak(){
         let lastDateMeditated : Date = defaults.object(forKey: "lastDate") as! Date
-        let nextDayDate : Date = Date().addingTimeInterval(86400)
+        let nextDayDate : Date = lastDateMeditated.addingTimeInterval(86400)
         let isAdd = Calendar.current.isDate(lastDateMeditated, equalTo: nextDayDate, toGranularity: .day)
+        if(defaults.integer(forKey: "streak") == 0){
+            defaults.set(1, forKey: "streak")
+            defaults.set(Date(), forKey: "lastDate")
+            currentUser.currentStreak = 1
+            return
+        }
+        if(Calendar.current.isDate(lastDateMeditated, equalTo: Date(), toGranularity: .day)){return}
         if(!isAdd){
             let currentStreak = defaults.integer(forKey: "streak")
             if(currentStreak > 5){
@@ -159,6 +184,9 @@ class CurrentUserViewModel : ObservableObject{
         currentUser.currentStreak = 0
         currentUser.currentZenPoints =  0
         currentUser.totalSessions = 0
+        if(Auth.auth().currentUser != nil){
+            addUserToFirestore()
+        }
         do{
             try Auth.auth().signOut()
         }catch{

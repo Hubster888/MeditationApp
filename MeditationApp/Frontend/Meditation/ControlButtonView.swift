@@ -42,16 +42,17 @@ struct ControlButtonView: View {
                 .shadow(radius: 20)
                 .scaleEffect(1.3)
             case .end:
-                Text("END")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color(ColorConfig().getDefaultBackColor()))
-                    .background(
-                        Rectangle().fill(Color(ColorConfig().getDefaultMainColor()))
-                            .frame(width: 160, height: 50, alignment: .center)
-                            .blur(radius: 3)
-                            .cornerRadius(15)
-                )
+                HStack{
+                    Text("END")
+                        .bold()
+                }
+                .padding()
+                .foregroundColor(Color(ColorConfig().getDefaultBackColor()))
+                .background(Color(ColorConfig().getPauseColor()))
+                .cornerRadius(25)
+                .clipped()
+                .shadow(radius: 20)
+                .scaleEffect(1.3)
             }
     }
 }

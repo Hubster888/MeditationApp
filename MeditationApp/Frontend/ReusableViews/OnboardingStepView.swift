@@ -13,10 +13,7 @@ struct OnboardingStepView: View {
     let height: CGFloat = UIScreen.main.bounds.height
     
     var imageWidth : CGFloat {
-        return width * 0.4
-    }
-    var imageHeight : CGFloat {
-        return height * 0.35
+        return height < 800 ? width * 0.8 : width
     }
     var textHeight : CGFloat {
         if(data.image != nil){
@@ -29,31 +26,27 @@ struct OnboardingStepView: View {
     var body: some View {
         VStack {
             if(data.image != nil){
-                /*Image(uiImage: UIImage(imageLiteralResourceName: data.image!))
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: imageWidth, height: imageHeight, alignment: .center)
-                    .padding(EdgeInsets(top: height * 0.01, leading: 0, bottom: height * 0.025, trailing: 0))*/
                 Image(uiImage: UIImage(imageLiteralResourceName: data.image!))
                     .resizable()
                     .scaledToFit()
                     .mask(Circle())
                     .shadow(radius: 15)
                     .overlay(Circle().stroke(Color(ColorConfig().getDefaultBackColor()), lineWidth: 5).shadow(radius: 15))
-                    .frame(width: width, height: width, alignment: .center)
-                    .padding(EdgeInsets(top: height * 0.01, leading: 0, bottom: height * 0.025, trailing: 0))
+                    .frame(width: imageWidth, height: imageWidth, alignment: .center)
+                    .padding(EdgeInsets(top: height * 0.1, leading: 0, bottom: height * 0.025, trailing: 0))
+                    .offset(y: height < 700 ? -10 : 0)
 
             }
             Text(data.heading)
                 .foregroundColor(Color(ColorConfig().getDefaultBackColor()))
-                .font(.system(size: width * 0.05, design: .rounded))
+                .font(height < 800 ? .title2 : .largeTitle)
                 .fontWeight(.bold)
-                .padding(.bottom, width * 0.025)
+                .padding(.bottom, 10)
                 .offset(y: -25)
             
             Text(data.text)
                 .foregroundColor(Color(ColorConfig().getDefaultBackColor()))
-                .font(.system(size: width * 0.04, design: .rounded))
+                .font(height < 800 ? .body : .title2)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .frame(width: width * 0.75, height: textHeight, alignment: .center)

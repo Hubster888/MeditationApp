@@ -10,31 +10,34 @@ import Firebase
 
 struct OnboardView: View {
     private let onBoardData : [OnboardingDataModel] = [
-            OnboardingDataModel(image: "music1", heading: "What's the plan?", text: "This here is your personalised skating plan to improve those skills in your own time. Based on a few answers you will provide; the plan plops you into the correct week and adjusts the time spent skating to your free time."),
-            OnboardingDataModel(image: "music2", heading: "Why?", text: "Don’t know what you're doing? The plan lets you improve on your own terms and guides you through the stages of becoming a “good” skater and enjoying yourself more. \"The plan only shows recommendations, you need to go at your own pace!\""),
-            OnboardingDataModel(image: "music3", heading: "How to?", text: "If you feel you struggled during a week, do the week over again. The whole point is to enjoy yourself. Do whatever you enjoy. Don’t be sacred to try new skills, often after a few tries of a new trick you will gain confidence even though you may have not landed it yet.")
-        ] //TODO: Write meaningful onboarding and find the pics
+            OnboardingDataModel(image: "music1", heading: "Whats the point?", text: "This app provides you with what you need to make your meditation better without overwhelming you with pointless content."),
+            OnboardingDataModel(image: "music2", heading: "The Zen", text: "Zen points are collected whenever you meditate and are used to unlock new music and sounds!"),
+            OnboardingDataModel(image: "music3", heading: "Why?", text: "We provide anything you need for free to allow you to focus on whats important while helping you stay consistent.")
+        ]
+    @State var stateChange : Bool = true
     @State var showingLogIn = false
     @State private var goToMainView : Bool = false
     @State private var isShowingDetailView = false
     @State private var onboardFinished = false
-    @EnvironmentObject var currentUser : CurrentUserViewModel
+    @State private var showingAsk : Bool = false
+    @ObservedObject var currentUser : CurrentUserViewModel = CurrentUserViewModel()
     @EnvironmentObject var settings : SettingsViewModel
     @EnvironmentObject var musciViewModel : MusicViewModel
     @EnvironmentObject var homeViewModel : HomeViewModel
         
     var body: some View {
         ZStack{
-            Color(ColorConfig().getDefaultMainColor()).ignoresSafeArea(.all)
+            Color(ColorConfig().getDefaultMainColor())
+                .ignoresSafeArea(.all)
             OnboardingViewPure(data: onBoardData, doneFunction: {
                 self.onboardFinished = true
-                if(Auth.auth().currentUser != nil){
-                    UserDefaults.standard.set(true, forKey: "launchedBefore")
+                UserDefaults.standard.set(true, forKey: "launchedBefore")
+                self.showingAsk = true
+                /*if(Auth.auth().currentUser != nil){
                     self.isShowingDetailView = true
                 }else{
-                    UserDefaults.standard.set(true, forKey: "launchedBefore")
                     self.showingLogIn = true
-                }
+                }*/
             }, backgroundColor: Color(ColorConfig().getDefaultMainColor()))
             .sheet(isPresented: $showingLogIn) {
                 LogInView().environmentObject(self.currentUser)
@@ -52,6 +55,17 @@ struct OnboardView: View {
                         self.isShowingDetailView = true
                     }
                 }
+            }
+            .alert(isPresented: $showingAsk) {
+                Alert(
+                    title: Text("Log In?"),
+                    primaryButton: .default(Text("Log In")) {
+                        showingLogIn = true
+                    },
+                    secondaryButton: .default(Text("Skip"), action: {
+                        self.isShowingDetailView = true
+                    })
+                )
             }
         }
     }

@@ -14,7 +14,7 @@ struct SettingsView: View {
     @State private var displayIndex = 0
     @State private var signedIn : Bool = false
     @State private var loginDisplayed : Bool = false
-    var displayOptions = ["Adaptive", "Light", "Dark"]
+    var displayOptions = ["Light", "Adaptive", "Dark"]
 
     var body: some View {
         NavigationView {

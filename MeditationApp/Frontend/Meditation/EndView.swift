@@ -10,6 +10,7 @@ import SwiftUI
 struct EndView: View {
     
     @EnvironmentObject var currentUser : CurrentUserViewModel
+    @EnvironmentObject var achivementViewModel : AchivementViewModel
     @Environment(\.presentationMode) var presentationMode
     let circleShadow : CGFloat = 25
     let lineWidth : CGFloat = 5
@@ -53,7 +54,11 @@ struct EndView: View {
                 Button(action: {
                     currentUser.updateZenPoints(isAdd: true, numOfPoints: numOfPoints * streakMultiplier)
                     currentUser.updateTotalSessions()
+                    currentUser.updateStreak()
                     presentationMode.wrappedValue.dismiss()
+                    if(currentUser.currentUser.currentZenPoints >= 250) {achivementViewModel.achive(achivement: 0)}
+                    if(currentUser.currentUser.totalSessions >= 30) {achivementViewModel.achive(achivement: 1)}
+                    if(currentUser.currentUser.currentStreak >= 14) {achivementViewModel.achive(achivement: 2)}
                 }){
                     ZStack{
                         Rectangle()

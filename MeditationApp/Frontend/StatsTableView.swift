@@ -11,7 +11,7 @@ struct StatsTableView: View {
     
     @EnvironmentObject var currentUser : CurrentUserViewModel
     var columnHeight : CGFloat {
-        return height * 0.25
+        return height < 750 ? height * 0.35 : height * 0.3
     }
     var columnWidth : CGFloat {
         return (boxWidth - width * 0.1) / 3
@@ -30,7 +30,7 @@ struct StatsTableView: View {
         ZStack{
             Rectangle() 
                 .fill(Color(ColorConfig().getDefaultBackColor()))
-                .frame(width: boxWidth, height: height < 750 ? height * 0.3 : columnHeight, alignment: .center)
+                .frame(width: boxWidth, height: columnHeight, alignment: .center)
                 .cornerRadius(cornerRadius)
                 .shadow(radius: shadowRadius, x: shadowDimensions, y: shadowDimensions)
             VStack{
@@ -39,17 +39,18 @@ struct StatsTableView: View {
                     Circle()
                         .fill(Color(ColorConfig().getDefaultMainColor()))
                         .shadow(radius: 5, x: 2, y: 2)
+                        .padding(.top, 10)
                     VStack{
                         Text(String(currentUser.currentUser.currentZenPoints))
                             .font(.title)
                             .foregroundColor(Color(ColorConfig().getDefaultBackColor()))
                             .bold()
                         Text("ZEN")
-                            .font(.title3)
+                            .font(.title2)
                             .foregroundColor(Color(ColorConfig().getDefaultBackColor()))
                     }
                 }
-                .frame(width: width * 0.25, height: width * 0.25, alignment: .center)
+                .frame(width: width * 0.32, height: width * 0.32, alignment: .center)
                 .padding(.top, 10)
                 Rectangle()
                     .fill(Color(ColorConfig().getDefaultMainColor()))
@@ -59,17 +60,17 @@ struct StatsTableView: View {
                     Spacer()
                     VStack{
                         Text("STREAK")
-                            .font(.title3)
+                            .font(height < 700 ? .body : .title3)
                         Text("\(currentUser.currentUser.currentStreak) Days - \(streakMultiplier)X")
-                            .font(.title2)
+                            .font(height < 700 ? .body : .title2)
                             .bold()
                     }
                     Spacer()
                     VStack{
                         Text("Total Sessions")
-                            .font(.title3)
+                            .font(height < 700 ? .body : .title3)
                         Text(String(currentUser.currentUser.totalSessions))
-                            .font(.title2)
+                            .font(height < 700 ? .body : .title2)
                             .bold()
                     }
                     Spacer()

@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct AchivementsTableView: View {
     
+    @EnvironmentObject var currentUser : CurrentUserViewModel
     @EnvironmentObject var achivementViewModel : AchivementViewModel
+    @State var showingAchivementLogged : Bool = false
+    @State var pressedState : Int = 0
+    @State private var showingLogIn = false
     
     var boxWidth : CGFloat {
         return width * 0.8
     }
     var boxHeight : CGFloat {
-        return height < 750 ? height * 0.35 : height * 0.3
+        return height < 750 ? height * 0.2 : height * 0.15
     }
     var achivementWidth : CGFloat {
         return width * 0.2
@@ -41,57 +46,48 @@ struct AchivementsTableView: View {
                 .frame(width: boxWidth, height: boxHeight, alignment: .center)
                 .cornerRadius(cornerRadius)
                 .shadow(radius: shadowRadius, x: shadowDimensions, y: shadowDimensions)
-            VStack{
-                HStack{
-                    Image(achivementViewModel.achivementList[0].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
-                        .padding(.leading, achivementPadding)
-                        .padding(.trailing, achivementPadding)
-                        .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                        .onTapGesture {
-                            print(achivementViewModel.achivementList[0].name)
-                        }
-                    Image(achivementViewModel.achivementList[1].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
-                        .padding(.trailing, achivementPadding)
-                        .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image(achivementViewModel.achivementList[2].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
-                        .padding(.trailing, achivementPadding)
-                        .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                }
-                .padding(.bottom, achivementLinePadding)
-                HStack{
-                    Image(achivementViewModel.achivementList[3].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
-                        .padding(.leading, achivementPadding)
-                        .padding(.trailing, achivementPadding)
-                        .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image(achivementViewModel.achivementList[4].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
-                        .padding(.trailing, achivementPadding)
-                        .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                    Image(achivementViewModel.achivementList[5].image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
-                        .padding(.trailing, achivementPadding)
-                        .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
-                        .onTapGesture {
-                            print(achivementViewModel.achivementList[5].name)
-                        }
-                }
+            HStack{
+                Image(achivementViewModel.achivementList[0].image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
+                    .padding(.leading, achivementPadding)
+                    .padding(.trailing, achivementPadding)
+                    .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
+                    .opacity(achivementViewModel.achivementList[0].isComplete ? 1 : 0.3)
+                    .onTapGesture {
+                        self.pressedState = 0
+                        self.showingAchivementLogged = true
+                    }
+                Image(achivementViewModel.achivementList[1].image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
+                    .padding(.trailing, achivementPadding)
+                    .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
+                    .opacity(achivementViewModel.achivementList[1].isComplete ? 1 : 0.3)
+                    .onTapGesture {
+                        self.pressedState = 1
+                        self.showingAchivementLogged = true
+                    }
+                Image(achivementViewModel.achivementList[2].image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: achivementWidth, height: achivementWidth, alignment: .leading)
+                    .padding(.trailing, achivementPadding)
+                    .shadow(radius: smallShadowRadius, x: smallShadowDimensions, y: smallShadowDimensions)
+                    .opacity(achivementViewModel.achivementList[2].isComplete ? 1 : 0.3)
+                    .onTapGesture {
+                        self.pressedState = 2
+                        self.showingAchivementLogged = true
+                    }
             }
+        }
+        .alert(isPresented: $showingAchivementLogged) {
+                    Alert(title: Text(achivementViewModel.achivementList[pressedState].name), message: Text(achivementViewModel.achivementList[pressedState].description), dismissButton: .default(Text("Got it!")))
+                }
+        .sheet(isPresented: $showingLogIn) {
+            LogInView().environmentObject(self.currentUser)
         }
     }
 }

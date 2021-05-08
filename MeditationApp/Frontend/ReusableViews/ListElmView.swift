@@ -36,23 +36,37 @@ struct ListElmView: View {
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(isSelected ? Color(ColorConfig().getDefaultMainColor()) : Color(ColorConfig().getDefaultBackColor()), lineWidth: 5).shadow(radius: -15))
                     .frame(width: listElmWidth - 5, height: listElmHeight - height * 0.02 - 5, alignment: .center)
                     .offset(y: -height * 0.02)
+                    .opacity(isLocked ? 0.75 : 1)
+                    .blur(radius: isLocked ? 2 : 0)
+                    .overlay(
+                        ZStack{
+                            Image(systemName: "lock.fill")
+                                .opacity(isLocked ? 1 : 0)
+                                .scaleEffect(height < 800 ? 3 : 5)
+                                .offset(y: -30)
+                                .overlay(
+                                    Text("\(elm.minZenPoints)")
+                                            .foregroundColor(Color(ColorConfig().getLightTextColor()))
+                                            .bold()
+                                        .font(height < 800 ? .title3 : .title2)
+                                        .frame(width: listElmWidth - 10, alignment: .center)
+                                            .opacity(isLocked ? 1 : 0)
+                                        .offset(y: height < 800 ? -20 : -15)
+                                )
+                            Text("Zen nedded!")
+                                .bold()
+                                .font(height < 800 ? .body : .title3)
+                                .foregroundColor(Color(ColorConfig().getLightTextColor()))
+                                .opacity(isLocked ? 1 : 0)
+                                .offset(y: 20)
+                        }
+                    )
                 Text("Music Name")
                     .fontWeight(.bold)
                     .font(.title2)
                     .offset(y: -height * 0.01)
                     .padding(.bottom, height * 0.01)
             }
-            Rectangle()
-                .fill(Color(ColorConfig().getMusicListColor()).opacity(isLocked ? 0.4 : 0))
-                .frame(width: listElmWidth - 5, height: listElmHeight - height * 0.02 - 5, alignment: .center)
-                .offset(y: -height * 0.04)
-            Text("\(elm.minZenPoints) Zen Points \n press to unlock")
-                .bold()
-                .font(.title3)
-                .frame(alignment: .center)
-                .multilineTextAlignment(.center)
-                .offset(y: -height * 0.04)
-                .opacity(isLocked ? 1 : 0)
         }
     }
 }

@@ -12,7 +12,7 @@ struct MeditationView: View {
     @State var audioPlayer : AVAudioPlayer?
     @State var isMoving : Bool = false
     var imageAnimationOffset : CGFloat {
-        return width
+        return height < 800 ? width * 0.8 : width
     }
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var meditationViewModel : MeditationViewModel = MeditationViewModel()
@@ -30,7 +30,9 @@ struct MeditationView: View {
                     .environmentObject(self.meditationViewModel)
                     .environmentObject(self.currentUser)
                     .padding(.bottom, 50)
+                    .padding(.top, height * 0.2)
                 VStack{
+                    Spacer()
                     Button(action: {
                         if let path = Bundle.main.path(forResource: "music1", ofType: ".mp3") { // Change "music1" to musicName when songs downloaded
                             UIApplication.shared.isIdleTimerDisabled.toggle()
@@ -82,7 +84,7 @@ struct MeditationView: View {
                     .offset(x: isMoving ? -imageAnimationOffset : imageAnimationOffset)
                     .animation(Animation.linear(duration: 18).repeatForever())
                     .onAppear(){
-                        isMoving = true // While developing leave this on FALSE
+                        isMoving = false // While developing leave this on FALSE
                     }
             )
             EndView(numOfPoints: secondsToHoursMinutesSeconds(seconds: meditationViewModel.timeSelected).1)

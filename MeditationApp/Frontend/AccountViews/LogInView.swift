@@ -14,23 +14,31 @@ struct LogInView: View {
 
     let width: CGFloat = UIScreen.main.bounds.width
     let height: CGFloat = UIScreen.main.bounds.height
+    var imageWidth : CGFloat {
+        return height < 800 ? width * 0.8 : width
+    }
+    var fieldPadding : CGFloat {
+        return height < 800 ? 5 : 15
+    }
     
     var body: some View {
         NavigationView{
             ZStack{
                 Color(ColorConfig().getDefaultMainColor()).ignoresSafeArea()
                 VStack {
-                    Text("Welcome Back")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(Color(ColorConfig().getLightTextColor()))
+                    if(height > 800){
+                        Text("Welcome Back")
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundColor(Color(ColorConfig().getLightTextColor()))
+                    }
                     Image("music1")
                         .resizable()
                         .scaledToFit()
                         .mask(Circle())
                         .shadow(radius: 10)
                         .overlay(Circle().stroke(Color(ColorConfig().getDefaultBackColor()), lineWidth: 5).shadow(radius: 10))
-                        .frame(width: width, height: width, alignment: .center)
+                        .frame(width: imageWidth, height: imageWidth, alignment: .center)
                         .offset(y: -50)
                     TextField("Email", text: $userViewModel.email)
                         .autocapitalization(.none)
@@ -39,16 +47,16 @@ struct LogInView: View {
                         .cornerRadius(5.0)
                         .padding()
                         .frame(width: width * 0.85)
-                        .padding(.bottom, 15)
-                        .offset(y: -50)
+                        .padding(.bottom, fieldPadding)
+                        .offset(y: height < 800 ? -80 : -60)
                     SecureField("Password", text: $userViewModel.password)
                         .padding()
                         .background(Color(ColorConfig().getLightTextColor()))
                         .cornerRadius(5.0)
                         .padding()
                         .frame(width: width * 0.85)
-                        .padding(.bottom, 15)
-                        .offset(y: -60)
+                        .padding(.bottom, fieldPadding)
+                        .offset(y: height < 800 ? -90 : -70)
                     Button(action: {
                         userViewModel.login()
                         presentationMode.wrappedValue.dismiss()
@@ -68,7 +76,7 @@ struct LogInView: View {
                     }
                     .disabled(!userViewModel.isValid)
                     .padding(.bottom, 35)
-                    .offset(y: -50)
+                    .offset(y: height < 800 ? -80 : -60)
                     Spacer()
                     NavigationLink(destination: SignUpView().environmentObject(self.userViewModel)){
                         Text("New To Zen?")
@@ -83,7 +91,7 @@ struct LogInView: View {
                                     .cornerRadius(15)
                         )
                     }.padding(.bottom, height * 0.05)
-                    .offset(y: -30)
+                    .offset(y: height < 800 ? -60 :-40)
                     Spacer()
                 }
             }

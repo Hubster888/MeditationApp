@@ -29,19 +29,20 @@ struct MenuButtonView: View {
             Circle()
                 .fill(homeViewModel.menuIsActive ? Color(ColorConfig().getDefaultBackColor()) : Color(ColorConfig().getDefaultMainColor()))
                 .frame(width: width * 0.4, height: width * 0.4, alignment: .bottomTrailing)
+                .onTapGesture {
+                    withAnimation(.easeIn(duration: 0.6)){
+                        homeViewModel.menuIsActive.toggle()
+                    }
+                }
             Image(homeViewModel.menuIsActive ? "gear1" : "gear2")
                 .resizable()
                 .scaledToFit()
                 .frame(width: width * 0.25, height: width * 0.25, alignment: .bottomTrailing)
-                /*.onTapGesture {
+                .onTapGesture {
                     withAnimation(.easeIn(duration: 0.6)){
                         homeViewModel.menuIsActive.toggle()
                     }
-                }*/
-        }.onTapGesture {
-            withAnimation(.easeIn(duration: 0.6)){
-                homeViewModel.menuIsActive.toggle()
-            }
+                }
         }
     }
 }

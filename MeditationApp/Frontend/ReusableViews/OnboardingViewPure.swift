@@ -94,12 +94,14 @@ struct OnboardingViewPure: View {
                 .frame(width: 120, height: 50)
                 .background(Color(.label))
                 .cornerRadius(25)
+                .offset(y: height < 800 ? -15 : 0)
             } else {
                 Image(systemName: "arrow.right.circle.fill")
                     .resizable()
                     .foregroundColor(Color(.label))
                     .scaledToFit()
                     .frame(width: 120, height: 50)
+                    .offset(y: height < 800 ? -15 : 0)
             }
         }.padding(.bottom, height * 0.05)
     }
