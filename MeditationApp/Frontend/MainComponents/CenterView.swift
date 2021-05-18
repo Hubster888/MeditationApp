@@ -61,7 +61,9 @@ struct CenterView: View {
             .buttonStyle(ScaleAnimationButtonEffect())
             .shadow(radius: buttonShadow)
             .sheet(isPresented: $showingSheet) {
-                MeditationView(musicName: musicViewModel.chosenMusic.name).environmentObject(self.currentUser)
+                MeditationView(musicName: musicViewModel.chosenMusic.name)
+                    .environmentObject(self.currentUser)
+                    .environmentObject(self.musicViewModel)
             }
         }
     }

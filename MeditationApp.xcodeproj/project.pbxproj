@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0053722653DCE100BB237F /* music10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C0053682653DCE000BB237F /* music10.mp3 */; };
+		2C0053732653DCE100BB237F /* music4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C0053692653DCE000BB237F /* music4.mp3 */; };
+		2C0053742653DCE100BB237F /* music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C00536A2653DCE100BB237F /* music2.mp3 */; };
+		2C0053752653DCE100BB237F /* music3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C00536B2653DCE100BB237F /* music3.mp3 */; };
+		2C0053762653DCE100BB237F /* music5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C00536C2653DCE100BB237F /* music5.mp3 */; };
+		2C0053772653DCE100BB237F /* music7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C00536D2653DCE100BB237F /* music7.mp3 */; };
+		2C0053782653DCE100BB237F /* music8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C00536E2653DCE100BB237F /* music8.mp3 */; };
+		2C00537A2653DCE100BB237F /* music9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C0053702653DCE100BB237F /* music9.mp3 */; };
+		2C00537B2653DCE100BB237F /* music6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C0053712653DCE100BB237F /* music6.mp3 */; };
+		2C0FE804264C256F00B06380 /* endMedSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2C0FE803264C256F00B06380 /* endMedSound.wav */; };
 		2C2E2F402632045200C7BA91 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E2F3F2632045200C7BA91 /* SignUpView.swift */; };
 		2C3B62FA2624545400D16304 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B62F92624545400D16304 /* MeditationViewModel.swift */; };
 		2C4980192610C820002359EA /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4980182610C820002359EA /* AnimatedImageView.swift */; };
@@ -47,8 +57,6 @@
 		2CE0BF19260B16C60061995F /* MeditationAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0BF18260B16C60061995F /* MeditationAppTests.swift */; };
 		2CE0BF24260B16C60061995F /* MeditationAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0BF23260B16C60061995F /* MeditationAppUITests.swift */; };
 		2CED8C532626ED57006CA0DC /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED8C522626ED57006CA0DC /* EndView.swift */; };
-		2CED8C582626EF7C006CA0DC /* meditationGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CED8C572626EF7B006CA0DC /* meditationGIF.gif */; };
-		2CED8C5D2626F74D006CA0DC /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CED8C5C2626F74D006CA0DC /* music1.mp3 */; };
 		2CF0F8032635C19B000BB32B /* Achivement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F8022635C19B000BB32B /* Achivement.swift */; };
 		2CF0F8082635C203000BB32B /* AchivementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0F8072635C203000BB32B /* AchivementViewModel.swift */; };
 		2CFBD6DC2635ECEB005C820A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CFBD6DB2635ECEB005C820A /* GoogleService-Info.plist */; };
@@ -78,6 +86,16 @@
 		15998531A3F972C5E420B095 /* Pods-MeditationAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationAppTests.release.xcconfig"; path = "Target Support Files/Pods-MeditationAppTests/Pods-MeditationAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		1AFF0D1FCF6DB5EE002560B0 /* Pods-MeditationApp-MeditationAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationApp-MeditationAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-MeditationApp-MeditationAppUITests/Pods-MeditationApp-MeditationAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		285AEE3D9D8BBABB29DB8878 /* Pods-MeditationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationApp.release.xcconfig"; path = "Target Support Files/Pods-MeditationApp/Pods-MeditationApp.release.xcconfig"; sourceTree = "<group>"; };
+		2C0053682653DCE000BB237F /* music10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music10.mp3; path = Music/music10.mp3; sourceTree = "<group>"; };
+		2C0053692653DCE000BB237F /* music4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music4.mp3; path = Music/music4.mp3; sourceTree = "<group>"; };
+		2C00536A2653DCE100BB237F /* music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music2.mp3; path = Music/music2.mp3; sourceTree = "<group>"; };
+		2C00536B2653DCE100BB237F /* music3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music3.mp3; path = Music/music3.mp3; sourceTree = "<group>"; };
+		2C00536C2653DCE100BB237F /* music5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music5.mp3; path = Music/music5.mp3; sourceTree = "<group>"; };
+		2C00536D2653DCE100BB237F /* music7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music7.mp3; path = Music/music7.mp3; sourceTree = "<group>"; };
+		2C00536E2653DCE100BB237F /* music8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music8.mp3; path = Music/music8.mp3; sourceTree = "<group>"; };
+		2C0053702653DCE100BB237F /* music9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music9.mp3; path = Music/music9.mp3; sourceTree = "<group>"; };
+		2C0053712653DCE100BB237F /* music6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music6.mp3; path = Music/music6.mp3; sourceTree = "<group>"; };
+		2C0FE803264C256F00B06380 /* endMedSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = endMedSound.wav; path = Music/endMedSound.wav; sourceTree = "<group>"; };
 		2C2E2F3F2632045200C7BA91 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2C3B62F92624545400D16304 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		2C4980182610C820002359EA /* AnimatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageView.swift; sourceTree = "<group>"; };
@@ -124,8 +142,6 @@
 		2CE0BF23260B16C60061995F /* MeditationAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationAppUITests.swift; sourceTree = "<group>"; };
 		2CE0BF25260B16C60061995F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CED8C522626ED57006CA0DC /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
-		2CED8C572626EF7B006CA0DC /* meditationGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = meditationGIF.gif; path = Images/meditationGIF.gif; sourceTree = "<group>"; };
-		2CED8C5C2626F74D006CA0DC /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music1.mp3; path = Music/music1.mp3; sourceTree = "<group>"; };
 		2CF0F8022635C19B000BB32B /* Achivement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achivement.swift; sourceTree = "<group>"; };
 		2CF0F8072635C203000BB32B /* AchivementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementViewModel.swift; sourceTree = "<group>"; };
 		2CFBD6DB2635ECEB005C820A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -276,9 +292,17 @@
 		2CE0BEFA260B16C40061995F = {
 			isa = PBXGroup;
 			children = (
-				2CED8C5C2626F74D006CA0DC /* music1.mp3 */,
+				2C00536A2653DCE100BB237F /* music2.mp3 */,
+				2C00536B2653DCE100BB237F /* music3.mp3 */,
+				2C0053692653DCE000BB237F /* music4.mp3 */,
+				2C00536C2653DCE100BB237F /* music5.mp3 */,
+				2C0053712653DCE100BB237F /* music6.mp3 */,
+				2C00536D2653DCE100BB237F /* music7.mp3 */,
+				2C00536E2653DCE100BB237F /* music8.mp3 */,
+				2C0053702653DCE100BB237F /* music9.mp3 */,
+				2C0053682653DCE000BB237F /* music10.mp3 */,
+				2C0FE803264C256F00B06380 /* endMedSound.wav */,
 				2CFBD6DB2635ECEB005C820A /* GoogleService-Info.plist */,
-				2CED8C572626EF7B006CA0DC /* meditationGIF.gif */,
 				2CE0BF05260B16C40061995F /* MeditationApp */,
 				2CE0BF17260B16C60061995F /* MeditationAppTests */,
 				2CE0BF22260B16C60061995F /* MeditationAppUITests */,
@@ -467,8 +491,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CED8C5D2626F74D006CA0DC /* music1.mp3 in Resources */,
-				2CED8C582626EF7C006CA0DC /* meditationGIF.gif in Resources */,
+				2C0053722653DCE100BB237F /* music10.mp3 in Resources */,
+				2C0053732653DCE100BB237F /* music4.mp3 in Resources */,
+				2C0053742653DCE100BB237F /* music2.mp3 in Resources */,
+				2C0053752653DCE100BB237F /* music3.mp3 in Resources */,
+				2C0053762653DCE100BB237F /* music5.mp3 in Resources */,
+				2C0053772653DCE100BB237F /* music7.mp3 in Resources */,
+				2C0053782653DCE100BB237F /* music8.mp3 in Resources */,
+				2C00537A2653DCE100BB237F /* music9.mp3 in Resources */,
+				2C00537B2653DCE100BB237F /* music6.mp3 in Resources */,
+				2C0FE804264C256F00B06380 /* endMedSound.wav in Resources */,
 				2CFBD6DC2635ECEB005C820A /* GoogleService-Info.plist in Resources */,
 				2CE0BF0E260B16C50061995F /* Preview Assets.xcassets in Resources */,
 				2CE0BF0B260B16C50061995F /* Assets.xcassets in Resources */,
@@ -805,7 +837,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Zen2.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -830,7 +862,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Zen2.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

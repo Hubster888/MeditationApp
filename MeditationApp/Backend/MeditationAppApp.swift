@@ -11,7 +11,6 @@ import SwiftUI
 struct MeditationAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    
     @ObservedObject var settings : SettingsViewModel = SettingsViewModel()
     @ObservedObject var musciViewModel : MusicViewModel = MusicViewModel()
     @ObservedObject var homeViewModel : HomeViewModel = HomeViewModel()

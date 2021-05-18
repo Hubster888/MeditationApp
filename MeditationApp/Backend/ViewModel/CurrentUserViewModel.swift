@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Firebase
 import FirebaseFirestore
+import UserNotifications
 
 class CurrentUserViewModel : ObservableObject{
     @Published var currentUser : CurrentUser
@@ -128,17 +129,19 @@ class CurrentUserViewModel : ObservableObject{
     
     //MARK: User stats
     func updateStreak(){
+        let userCalendar = Calendar.current
         let lastDateMeditated : Date = defaults.object(forKey: "lastDate") as! Date
         let nextDayDate : Date = lastDateMeditated.addingTimeInterval(86400)
-        let isAdd = Calendar.current.isDate(lastDateMeditated, equalTo: nextDayDate, toGranularity: .day)
+        let isAdd = userCalendar.compare(lastDateMeditated, to: nextDayDate, toGranularity: .day)
+        
         if(defaults.integer(forKey: "streak") == 0){
             defaults.set(1, forKey: "streak")
             defaults.set(Date(), forKey: "lastDate")
             currentUser.currentStreak = 1
             return
         }
-        if(Calendar.current.isDate(lastDateMeditated, equalTo: Date(), toGranularity: .day)){return}
-        if(!isAdd){
+        if(userCalendar.compare(lastDateMeditated, to: Date(), toGranularity: .day).rawValue == 0){return}
+        if(isAdd.rawValue != 0){
             let currentStreak = defaults.integer(forKey: "streak")
             if(currentStreak > 5){
                 updateZenPoints(isAdd: false, numOfPoints: currentStreak)

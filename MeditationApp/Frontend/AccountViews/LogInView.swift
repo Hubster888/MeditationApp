@@ -15,7 +15,7 @@ struct LogInView: View {
     let width: CGFloat = UIScreen.main.bounds.width
     let height: CGFloat = UIScreen.main.bounds.height
     var imageWidth : CGFloat {
-        return height < 800 ? width * 0.8 : width
+        return height < 800 ? width * 0.5 : width * 0.7
     }
     var fieldPadding : CGFloat {
         return height < 800 ? 5 : 15
@@ -31,8 +31,9 @@ struct LogInView: View {
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(Color(ColorConfig().getLightTextColor()))
+                            .offset(y: -25)
                     }
-                    Image("music1")
+                    Image("illustration1")
                         .resizable()
                         .scaledToFit()
                         .mask(Circle())

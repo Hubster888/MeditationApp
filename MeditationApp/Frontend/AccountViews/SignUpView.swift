@@ -14,7 +14,7 @@ struct SignUpView: View {
     let width: CGFloat = UIScreen.main.bounds.width
     let height: CGFloat = UIScreen.main.bounds.height
     var imageSize : CGFloat {
-        return height < 800 ? width * 0.45 : width * 0.7
+        return height < 800 ? width * 0.5 : width * 0.8
     }
     var offsets : CGFloat {
         height < 800 ? -15 : 0
@@ -33,7 +33,8 @@ struct SignUpView: View {
                         .offset(y: offsets)
                     Spacer()
                 }
-                AnimatedImageView(fileName: "meditationGIF")
+                Image("illustration2")
+                    .resizable()
                     .scaledToFit()
                     .mask(Circle())
                     .shadow(radius: 15)

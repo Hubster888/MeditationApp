@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import UserNotifications
 
 struct SettingsView: View {
     @EnvironmentObject var settings : SettingsViewModel
@@ -20,6 +21,33 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("MEDITATION")){
+                    Button(action: {
+                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                            if success {
+                                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                let content = UNMutableNotificationContent()
+                                content.title = "Dont forget to get your zen!"
+                                content.subtitle = "You will loose your streak if you dont meditate daily."
+                                content.sound = UNNotificationSound.default
+
+                                // show this notification five seconds from now
+                                var dateComponents = DateComponents()
+                                dateComponents.hour = 9
+                                dateComponents.minute = 30
+                                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                                
+                                // choose a random identifier
+                                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                                // add our notification request
+                                UNUserNotificationCenter.current().add(request)
+                            } else if let error = error {
+                                print(error.localizedDescription)
+                            }
+                        }
+                    }){
+                        Text("Allow notifications")
+                    }
                     Picker(selection: $displayIndex, label: Text("Display Mode")) {
                         ForEach(0 ..< displayOptions.count) {
                             Text(self.displayOptions[$0])

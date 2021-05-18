@@ -61,11 +61,6 @@ struct ListElmView: View {
                                 .offset(y: 20)
                         }
                     )
-                Text("Music Name")
-                    .fontWeight(.bold)
-                    .font(.title2)
-                    .offset(y: -height * 0.01)
-                    .padding(.bottom, height * 0.01)
             }
         }
     }

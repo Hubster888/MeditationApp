@@ -62,6 +62,9 @@ struct ContentView: View {
                     .foregroundColor(Color(ColorConfig().getdarkTextColor()))
                     .frame(width: width * 0.75)
                     .multilineTextAlignment(.center)
+                    .onTapGesture {
+                        currentUser.updateStreak()
+                    }
                     
                 //Image and button
                 CenterView()
@@ -120,7 +123,6 @@ struct ContentView: View {
             Auth.auth().addStateDidChangeListener { (auth, user) in
               // Make the changes when the user is logged in or out
                 achivementViewModel.updateAchivements()
-                
             }
         }
     }

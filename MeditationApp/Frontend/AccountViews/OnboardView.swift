@@ -10,9 +10,9 @@ import Firebase
 
 struct OnboardView: View {
     private let onBoardData : [OnboardingDataModel] = [
-            OnboardingDataModel(image: "music1", heading: "Whats the point?", text: "This app provides you with what you need to make your meditation better without overwhelming you with pointless content."),
-            OnboardingDataModel(image: "music2", heading: "The Zen", text: "Zen points are collected whenever you meditate and are used to unlock new music and sounds!"),
-            OnboardingDataModel(image: "music3", heading: "Why?", text: "We provide anything you need for free to allow you to focus on whats important while helping you stay consistent.")
+            OnboardingDataModel(image: "music5", heading: "Whats the point?", text: "This app provides you with what you need to make your meditation better without overwhelming you with pointless content."),
+            OnboardingDataModel(image: "music8", heading: "The Zen", text: "Zen points are collected whenever you meditate and are used to unlock new music and sounds!"),
+            OnboardingDataModel(image: "music10", heading: "Why?", text: "We provide anything you need for free to allow you to focus on whats important while helping you stay consistent.")
         ]
     @State var stateChange : Bool = true
     @State var showingLogIn = false

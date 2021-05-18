@@ -17,6 +17,7 @@ struct MeditationView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var meditationViewModel : MeditationViewModel = MeditationViewModel()
     @EnvironmentObject var currentUser : CurrentUserViewModel
+    @EnvironmentObject var musicViewModel : MusicViewModel
     let musicName : String
     @State var isTimerRunning = false
     let width: CGFloat = UIScreen.main.bounds.width
@@ -34,7 +35,7 @@ struct MeditationView: View {
                 VStack{
                     Spacer()
                     Button(action: {
-                        if let path = Bundle.main.path(forResource: "music1", ofType: ".mp3") { // Change "music1" to musicName when songs downloaded
+                        if let path = Bundle.main.path(forResource: musicViewModel.chosenMusic.name, ofType: ".mp3") { // Change "music1" to musicName when songs downloaded
                             UIApplication.shared.isIdleTimerDisabled.toggle()
                             self.audioPlayer = AVAudioPlayer()
 

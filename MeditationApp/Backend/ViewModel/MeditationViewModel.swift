@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class MeditationViewModel : ObservableObject {
     @Published var timerIsRunning : Bool = false
@@ -13,9 +14,24 @@ class MeditationViewModel : ObservableObject {
     @Published var timeSelected : Int = 5 // 120
     @Published var isFinished : Bool = false
     
+    var audioPlayer: AVAudioPlayer?
+    
     func finishMeditation(){
         if(timerIsRunning && timeLeft == 0){
             isFinished = true
+            playSound()
+        }
+    }
+    
+    func playSound() {
+        if let path = Bundle.main.path(forResource: "endMedSound", ofType: ".wav") {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                audioPlayer?.setVolume(0.25, fadeDuration: 2)
+                audioPlayer?.play()
+            } catch {
+                print("ERROR")
+            }
         }
     }
 }
